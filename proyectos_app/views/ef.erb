@@ -1,0 +1,23 @@
+ <h2>
+    Listado de Proyectos
+ </h2>
+<div class="alert alert-primary" role="alert">
+  Hola
+</div>
+<p><a href="/proyecto" class="btn btn-success">Nuevo</a></p>
+<div>
+  <% proyectos.each do |proyecto| %>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= proyecto.nombre %>
+        </h4>
+        <p class="card-text">
+          Ciclo <%= proyecto.ciclo %>
+        </p> 
+        <a href="/proyecto/modificar?id=<%= proyecto.id %>" class="btn btn-primary">Editar</a>
+        <a href="/proyecto/eliminar?id=<%= proyecto.id %>" class="btn btn-primary">Eliminar</a>
+      </div>
+    </div>
+  <% end %>
+</div>

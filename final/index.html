@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Librerias externas Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+  <title>Examen Final</title>
+  <!--Enlace a CSS local-->
+  <style>
+    body {
+      width: 1100px;
+      margin: auto;
+    }
+
+    #titulo-programa {
+      margin: 20px 0px;
+    }
+
+    .tab-pane {
+      padding: 20px;
+    }
+
+    .tabla-principal {
+      margin-top: 20px;
+      margin-bottom: 0px;
+    }
+
+    .select {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    .tabla-collapse {
+      margin-top: 0px;
+    }
+
+    .btn-principal {
+      margin-top: 20px;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .icon-action{
+      font-size: 20px;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="titulo-programa">Examen Final 2017-2</h1>
+  <!--Tabs-->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="gestion_permisos-tab" data-toggle="tab" href="#gestion_permisos" role="tab" aria-controls="gestion_permisos"
+        aria-selected="true">Gestion Permisos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="gestion_roles-tab" data-toggle="tab" href="#gestion_roles" role="tab" aria-controls="gestion_roles"
+        aria-selected="false">Gestion Roles</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="gestion_usuarios-tab" data-toggle="tab" href="#gestion_usuarios" role="tab" aria-controls="gestion_usuarios"
+        aria-selected="false">Gestion Usuarios</a>
+    </li>
+  </ul>
+  <!--Contenido de los tabs-->
+  <div class="tab-content" id="myTabContent">
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--Tab Gestion Permisos-->
+    <div class="tab-pane fade show active" id="gestion_permisos" role="tabpanel" aria-labelledby="gestion_permisos-tab">
+      <h3>Gestionar Permisos</h3>
+      <!--Tabla Gestion Permisos-->
+      <table class="table table-bordered tabla-principal" >
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Llave</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-gestion-permisos"></tbody>
+      </table>
+      <!--Nuevo registro-->
+      <div class="collapse" id="nuevo_registro">
+        <table class="table table-bordered tabla-collapse" id="tabla-gestion-permisos-nuevo">
+          <tbody>
+            <tr>
+              <td>
+                <input type="text">
+              </td>
+              <td>
+                <input type="text">
+              </td>
+              <td>
+                <i class="fa fa-plus icon-action"></i>
+                <i class="fa fa-times icon-action"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Boton para agregar registros-->
+      <p>
+        <button class="btn btn-primary btn-principal" type="button" data-toggle="collapse" data-target="#nuevo_registro" aria-expanded="false"
+          aria-controls="nuevo_registro">Agregar registro</button>
+      </p>
+    </div>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--Tab Gestion Roles-->
+    <div class="tab-pane fade" id="gestion_roles" role="tabpanel" aria-labelledby="gestion_roles-tab">
+      <!--Grid para Gestionar roles y Asignar permisos-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h3>Gestionar Roles</h3>
+            <!--Tabla Gestion Roles-->
+            <table class="table table-bordered tabla-principal">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-gestion-roles"></tbody>
+            </table>
+            <!--Nuevo rol-->
+            <div class="collapse" id="nuevo_rol">
+              <table class="table table-bordered tabla-collapse" id="tabla-gestion-roles-nuevo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="text">
+                    </td>
+                    <td>
+                      <i class="fa fa-plus icon-action"></i>
+                      <i class="fa fa-times icon-action"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Boton para agregar registros-->
+            <p>
+              <button class="btn btn-primary btn-principal" type="button" data-toggle="collapse" data-target="#nuevo_rol" aria-expanded="false"
+                aria-controls="nuevo_rol">Agregar registro</button>
+            </p>
+          </div>
+          <div class="col-sm">
+            <h3>Asignar Permisos</h3>
+            <!--Select Asignar Permisos-->
+            <select multiple class="form-control select" id="select-asignar-permisos">
+              <option>crear_usuario</option>
+              <option selected="selected">editar_usuario</option>
+              <option>eliminar_usuario</option>
+            </select>
+            <!--Boton para guardar cambios-->
+            <p>
+              <button class="btn btn-primary btn-principal" type="button">Guardar cambios</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--Tab Gestion Usuarios-->
+    <div class="tab-pane fade" id="gestion_usuarios" role="tabpanel" aria-labelledby="gestion_usuarios-tab">
+      <!--Grid para Gestionar usuarios y Asignar roles-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h3>Gestionar Usuarios</h3>
+            <!--Tabla Gestion Usuarios-->
+            <table class="table table-bordered tabla-principal" >
+              <thead>
+                <tr>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Contraseña</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-gestion-usuarios"></tbody>
+            </table>
+            <!--Nuevo rol-->
+            <div class="collapse" id="nuevo_usuario">
+              <table class="table table-bordered tabla-collapse" id="tabla-gestion-usuarios-nuevo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="text">
+                    </td>
+                    <td>
+                      <input type="text">
+                    </td>
+                    <td>
+                      <input type="text">
+                    </td>
+                    <td>
+                      <i class="fa fa-plus icon-action"></i>
+                      <i class="fa fa-times icon-action"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Boton para agregar registros-->
+            <p>
+              <button class="btn btn-primary btn-principal" type="button" data-toggle="collapse" data-target="#nuevo_usuario" aria-expanded="false"
+                aria-controls="nuevo_usuario">Agregar registro</button>
+            </p>
+          </div>
+          <div class="col-sm">
+            <h3>Asignar Roles</h3>
+            <!--Select Asignar Roles-->
+            <select multiple class="form-control select" id="select-asignar-roles">
+              <option>Rol 1</option>
+              <option>Rol 2</option>
+              <option>Rol 3</option>
+            </select>
+            <!--Boton para guardar cambios-->
+            <p>
+              <button class="btn btn-primary btn-principal" type="button">Guardar cambios</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!--Enlace con el Javascript local-->
+  <script src="app.js"></script>
+</body>
+
+</html>

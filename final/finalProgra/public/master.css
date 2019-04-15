@@ -1,0 +1,39 @@
+body {
+    width: 1100px;
+    margin: auto;
+  }
+
+  #titulo-programa {
+    margin: 20px 0px;
+  }
+
+  .tab-pane {
+    padding: 20px;
+  }
+
+  .tabla-principal {
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
+  .select {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .tabla-collapse {
+    margin-top: 0px;
+  }
+
+  .btn-principal {
+    margin-top: 20px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .icon-action{
+    font-size: 20px;
+    margin-right: 20px;
+  }
